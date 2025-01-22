@@ -31,6 +31,7 @@ gem "thruster", require: false
 
 gem "devise"
 gem "pundit"
+gem "dotenv", groups: [ :development, :test ]
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -48,5 +49,3 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
-
-

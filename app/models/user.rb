@@ -3,4 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one :api_token, dependent: :destroy
+  after_create :create_api_token
+
+  private
+
+  def create_api_token
+    ApiToken.create!(user: self)
+  end
 end
